@@ -51,7 +51,7 @@ FROM employees;
 -- 13
 SELECT EmployeeID, FirstName, LastName, Title
 FROM Employees
-WHERE LOWER(Title) LIKE '%manager%'
+WHERE Title LIKE '%manager%'
 -- 14
 SELECT DISTINCT Title
 FROM Employees;
