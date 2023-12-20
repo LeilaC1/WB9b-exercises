@@ -24,8 +24,14 @@ GROUP BY CategoryID
 -- 8
 Select COUNT(SupplierID) 
 FROM products
-WHERE SupplierID <= 5
+WHERE SupplierID >= 5
 GROUP BY SupplierID
+-- Ousmane Solution
+SELECT SupplierID, count(ProductID) AS NumberOfItemsSupplied
+FROM Products
+GROUP BY SupplierID
+HAVING COUNT(ProductID) >= 5
+ORDER BY SupplierID;
 -- 9
 Select ProductID, ProductName, UnitPrice, UnitsInStock
 FROM products

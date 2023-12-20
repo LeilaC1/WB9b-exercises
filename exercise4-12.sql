@@ -16,18 +16,14 @@ JOIN categories ON products.CategoryID = categories.CategoryID
 JOIN suppliers ON products.SupplierID = suppliers.SupplierID
 ORDER BY products.ProductName;
 -- 4
-USE northwind;
-
 SELECT products.ProductName, categories.CategoryName
 FROM products
-JOIN Categories ON products.CategoryID = categories.CategoryID
+JOIN categories ON products.CategoryID = categories.CategoryID
 WHERE products.UnitPrice = (
     SELECT MAX(UnitPrice) 
     FROM products)
 ORDER BY products.ProductName;
 -- 5
-USE northwind;
-
 SELECT orders.OrderID, orders.ShipName, orders.ShipAddress, shippers.CompanyName
 FROM orders
 JOIN shippers ON orders.ShipVia = shippers.ShipperID
